@@ -38,7 +38,7 @@ export const StyledEnabledButton = styled.button`
   outline: none;
   text-align: center;
   &:hover {
-    background: rgb(3, 37, 65);
+    background: #032541;
   }
 `;
 export const StyledDisabledButton = styled.button`
@@ -47,8 +47,11 @@ export const StyledDisabledButton = styled.button`
   border: #f0f0f0;
   color: #0000007f;
   font-size: 1.2rem;
-  font-weight:bold;
+  font-weight: bold;
   height: 2.75rem;
   outline: none;
   text-align: center;
 `;
+
+
+
