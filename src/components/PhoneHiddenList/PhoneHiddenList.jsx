@@ -7,7 +7,10 @@ import HiddenList, {
 } from 'components/PhoneHiddenList/phone-hidden-list-styles';
 
 /**
- * Lists phone hidden list elements
+ * Shows and hides drop down list..
+ *
+ *  @param {Opject} props Props.
+ *  @param {function} props.sorts the data
  * * @return {JSX.element}
  */
 
@@ -17,20 +20,31 @@ function PhoneHiddenList({ onToggle }) {
   const [togglePeopleMenu, settogglePeopleMenu] = useState(false);
 
   /**
-   * Handles showning items menu.
+   * Handles showing items menu
+   *
+   * @param {React.SyntheticEvent} event Event data.
    */
+
   const toggleMoviesMenuHandler = () => {
     settoggleItem(!toggleItem);
   };
+
   /**
-   * Handles showning shows menu.
+   * Handles showing shows menu
+   *
+   * @param {React.SyntheticEvent} event Event data.
    */
+
   const toggleShowsHandler = () => {
     settoggleShows(!toggleShows);
   };
+
   /**
-   * Handles showning pepple's menu.
+   * Handles showing people's menu
+   *
+   * @param {React.SyntheticEvent} event Event data.
    */
+
   const togglePeopleMenuHandler = () => {
     settogglePeopleMenu(!togglePeopleMenu);
   };

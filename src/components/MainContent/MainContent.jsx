@@ -6,6 +6,10 @@ import  StyledMainContent from "components/MainContent/main-content-styles";
 
 /**
  * Lists main section elements.
+ *
+ *  @param {Opject} props
+ *  @param {Array} props.movies contains movies data.
+ *  @param {function} props.sorts sorts the data.
  * * @return {JSX.element}
  */
 

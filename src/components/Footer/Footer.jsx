@@ -4,6 +4,7 @@ import StyledFooter, {
   StyledUserSection,
   StyledImage,
   StyledTitle,
+  StyledElement,
 } from 'components/Footer/footer-styles';
 import logo from 'Assets/Logo.svg';
 
@@ -18,34 +19,34 @@ function Footer() {
       <StyledContainer>
         <div>
           <StyledImage src={logo} alt="Logo" />
-          <StyledUserSection>Hi Ghadeer91!</StyledUserSection>
+          <StyledUserSection>JOIN THE COMMUNITY</StyledUserSection>
         </div>
         <div>
           <StyledTitle>THE BASICS</StyledTitle>
-          <h1>About TMDB</h1>
-          <h1>Contact Us</h1>
-          <h1>Support Forums</h1>
-          <h1>API</h1>
-          <h1>System Status</h1>
+          <StyledElement>About TMDB</StyledElement>
+          <StyledElement>Contact Us</StyledElement>
+          <StyledElement>Support Forums</StyledElement>
+          <StyledElement>API</StyledElement>
+          <StyledElement>System Status</StyledElement>
         </div>
         <div>
           <StyledTitle>Get Involved</StyledTitle>
-          <h1>Contribution Bible</h1>
-          <h1>Add New Movie</h1>
-          <h1>Add New TV Show</h1>
+          <StyledElement>Contribution Bible</StyledElement>
+          <StyledElement>Add New Movie</StyledElement>
+          <StyledElement>Add New TV Show</StyledElement>
         </div>
         <div>
           <StyledTitle>Community</StyledTitle>
-          <h1>Guidlines</h1>
-          <h1>Discussions</h1>
-          <h1>Leaderboard</h1>
-          <h1>Twitter</h1>
+          <StyledElement>Guidlines</StyledElement>
+          <StyledElement>Discussions</StyledElement>
+          <StyledElement>Leaderboard</StyledElement>
+          <StyledElement>Twitter</StyledElement>
         </div>
         <div>
           <StyledTitle>LEGAL</StyledTitle>
-          <h1>Terms of Use</h1>
-          <h1>API Terms of Use</h1>
-          <h1>Privacy Policy</h1>
+          <StyledElement>Terms of Use</StyledElement>
+          <StyledElement>API Terms of Use</StyledElement>
+          <StyledElement>Privacy Policy</StyledElement>
         </div>
       </StyledContainer>
     </StyledFooter>
