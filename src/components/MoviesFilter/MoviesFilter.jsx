@@ -21,6 +21,9 @@ import Arrow from 'Assets/Arrow.svg';
 
 /**
  * Lists filter and sort sections.
+ *
+ *  @param {Opject} props
+ *  @param {function} props.sorts sorts the data.
  * * @return {JSX.element}
  */
 
@@ -30,24 +33,32 @@ function MoviesFilter({ sortingHandler }) {
   const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
 
   /**
-   * Handles openning and closing drop down list.
+   * Handle onClick event.
+   * Shows selection drop down list.
+   *
+   * @param {React.SyntheticEvent} event Event data.
    */
 
   const dropDownListHandler = () => {
     setDropDownList(!dropDownList);
   };
   /**
-   * Handles onChange event.
-   * Shows the enabled submit button.
+   * Handle onChange event.
+   * Shows submit button.
+   *
+   * @param {React.SyntheticEvent} event Event data.
    */
   const sortSubmitHandler = (event) => {
     setSelectedValue(event.target.value);
     setButtonIsDisabled(false);
   };
   /**
-   * Handles onClick event.
-   * Shows the disabled submit button.
+   * Handle onChange event.
+   * Shows disabled button.
+   *
+   * @param {React.SyntheticEvent} event Event data.
    */
+
   const callSortSubmitHandler = () => {
     sortingHandler(selectedValue);
     setButtonIsDisabled(true);

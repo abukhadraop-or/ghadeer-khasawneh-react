@@ -8,6 +8,10 @@ import PhoneHiddenList from 'components/PhoneHiddenList/PhoneHiddenList';
 
 /**
  * Lists page elements.
+ *
+ *  @param {Opject} props
+ *  @param {Array} props.movies contains movies data.
+ *  @param {function} props.sorts sorts the data.
  * * @return {JSX.element}
  */
 
@@ -15,7 +19,10 @@ function Layout({ movies, sortingHandler }) {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   /**
-   * Handles hamburger menu list appearance and disappearance.
+   * Handles onClick event.
+   * Handles showing and hiding the Hamburger menu 
+   *
+   * @param {React.SyntheticEvent} event Event data.
    */
 
   const toggleMenuHandler = () => {

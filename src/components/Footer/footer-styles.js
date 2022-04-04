@@ -25,6 +25,7 @@ export const StyledContainer = styled.div`
     align-items: flex-start;
     flex-direction: row;
     font-size: 1.25rem;
+    font-weight: normal;
     gap: 1.5625rem;
     justify-content: space-evenly;
     margin: 0 auto;
@@ -46,7 +47,7 @@ export const StyledUserSection = styled.div`
   padding-right: 0.313rem;
   padding-top: 0.75rem;
   text-align: center;
-  width: 9.375rem;
+  width: 13.75rem;
 `;
 
 export const StyledImage = styled.img`
@@ -54,7 +55,6 @@ export const StyledImage = styled.img`
   @media (min-width: 37.5rem) {
     display: block;
     margin-top: -2.188rem;
-    padding-right: 0rem;
     width: 7.5rem;
   }
 `;
@@ -63,4 +63,11 @@ export const StyledTitle = styled.div`
   font-weight: 700;
   padding-bottom: 0.625rem;
 `;
+export const StyledElement = styled.div`
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  padding: 3px;
+`;
+
 export default StyledFooter;

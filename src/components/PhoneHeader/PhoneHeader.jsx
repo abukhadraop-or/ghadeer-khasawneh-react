@@ -1,16 +1,26 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { GiHamburgerMenu } from "react-icons/gi";
-import StyledPhoneHeader, { StyledLeftSection, StyledRightSection, StyledAvatarImage, StyledSearchIcon, StyledLogo } from "components/PhoneHeader/phone-header-styles";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import StyledPhoneHeader, {
+  StyledLeftSection,
+  StyledRightSection,
+  StyledAvatarImage,
+  StyledSearchIcon,
+  StyledLogo,
+} from 'components/PhoneHeader/phone-header-styles';
 import Logo from 'Assets/Logo.svg';
 import Avatar from 'Assets/Avatar.svg';
 import SearchIcon from 'Assets/SearchIcon.svg';
+
 /**
- * Lists phone header elements
+ * Lists phone header elements.
+ *
+ *  @param {Opject} props
+ *  @param {function} props.sorts sorts the data.
  * * @return {JSX.element}
  */
 
-function PhoneHeader ({onToggleHandler}) {
+function PhoneHeader({ onToggleHandler }) {
   return (
     <StyledPhoneHeader>
       <StyledLeftSection>
@@ -27,7 +37,7 @@ function PhoneHeader ({onToggleHandler}) {
       </StyledRightSection>
     </StyledPhoneHeader>
   );
-};
+}
 PhoneHeader.propTypes = {
   onToggleHandler: PropTypes.func.isRequired,
 };

@@ -19,7 +19,13 @@ import {
 import ellipse from 'Assets/ellipse.png';
 
 /**
- * Lists each movie elements.
+ * Lists main section elements.
+ *
+ *  @param {Opject} props
+ *  @param {String} props.title movie title
+ *  @param {String} props.date movie release date 
+ *  @param {String} props.image movie image
+ *  @param {String} props.overview overview about the movie
  * * @return {JSX.element}
  */
 
