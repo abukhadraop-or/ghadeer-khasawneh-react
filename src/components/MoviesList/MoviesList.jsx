@@ -1,18 +1,16 @@
 import React from 'react';
 import MovieCard from 'components/Movie/MovieCard';
-import useFetch from 'Services/Https';
+import PropTypes from 'prop-types';
 
-import { StyledMoviesCards } from 'components/MoviesList/movies-list-styles';
+import StyledMoviesCards from 'components/MoviesList/movies-list-styles';
 
 /**
  * Lists movies as cards
  * * @return {JSX.element}
  */
 
-function MoviesList() {
-  const { movies } = useFetch();
+function MoviesList({movies}) {
   return (
-    // <Bla>
     <StyledMoviesCards>
       {movies.map((movie) => (
         <MovieCard
@@ -24,8 +22,10 @@ function MoviesList() {
         />
       ))}
     </StyledMoviesCards>
-    // <button className="loadButton">HIIIIIIIIII</button>
-    /* </Bla> */
+
   );
 }
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf.isRequired,
+};
 export default MoviesList;

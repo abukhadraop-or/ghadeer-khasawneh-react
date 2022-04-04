@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledMoviesCards = styled.div`
+const StyledMoviesCards = styled.div`
   column-gap: .625rem;
   display: flex;
   flex: 3;
@@ -36,28 +36,5 @@ export const StyledMoviesCards = styled.div`
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 `;
-export const Bla = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* @media (min-width: 50rem) {
-    width: 75%;
-  } */
-  /* @media (max-width: 43.75rem) {
-    width: 50%;
-  }
-  @media (min-width: 37.5rem) {
-    width: 100%;
-  } */
 
-  & button {
-    background-color: #01b4e4;
-    border: .3125rem solid #01b4e4;
-    border-radius: .5rem;
-    color: white;
-    font-size: 1.5625rem;
-    font-weight: bold;
-    height: 3.125rem;
-    margin-top: 1.875rem;
-  }
-`;
+export default StyledMoviesCards;;

@@ -1,27 +1,35 @@
 import styled from 'styled-components';
 
 const StyledFooter = styled.div`
-  display: none;
-
-  @media (min-width: 600px) {
-    display: block;
-    height: 18.75rem;
-    margin-top: 6.25rem;
+  padding-top: 1.25rem;
+  @media (min-width: 37.5rem) {
     background: #032541;
     color: #ffffff;
     font-size: 1.08rem;
     font-weight: 400;
+    height: 18.75rem;
+    margin-top: 6.25rem;
+    padding-top: 0rem;
   }
 `;
 export const StyledContainer = styled.div`
-  @media (min-width: 600px) {
+  align-items: space-between;
+  background: #032541;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2.5rem;
+
+  @media (min-width: 37.5rem) {
     align-items: flex-start;
-    display: flex;
+    flex-direction: row;
     font-size: 1.25rem;
+    gap: 1.5625rem;
     justify-content: space-evenly;
-    margin-left: 500px;
-    padding-top: 100px;
-    width: 50%;
+    margin: 0 auto;
+    padding-top: 4.375rem;
+    width: fit-content;
   }
 `;
 
@@ -42,9 +50,13 @@ export const StyledUserSection = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  margin-top: -2.188rem;
-  padding-right: 0rem;
-  width: 7.5rem;
+  display: none;
+  @media (min-width: 37.5rem) {
+    display: block;
+    margin-top: -2.188rem;
+    padding-right: 0rem;
+    width: 7.5rem;
+  }
 `;
 export const StyledTitle = styled.div`
   font-size: 1.26rem;

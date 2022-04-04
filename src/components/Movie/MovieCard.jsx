@@ -14,6 +14,7 @@ import {
   StyledMenuContent,
   StyledMenuTitle,
   StyledBorderedTitle,
+  StyledEmptyDiv,
 } from 'components/Movie/movie-styles';
 import ellipse from 'Assets/ellipse.png';
 
@@ -46,16 +47,19 @@ function MovieCard({ title, date, image, overview }) {
           onClick={dropDownListHandler}
         />
         {dropDownMenu && (
-          <StyledDropDownList>
-            <StyledMenuTitle>
-              Want to rate or add this item to a list?
-            </StyledMenuTitle>
-            <StyledBorderedTitle>Login</StyledBorderedTitle>
-            <StyledMenuTitle>Not a member?</StyledMenuTitle>
-            <StyledMenuContent>
-              Sign up and join the community
-            </StyledMenuContent>
-          </StyledDropDownList>
+          <>
+            <StyledDropDownList>
+              <StyledMenuTitle>
+                Want to rate or add this item to a list?
+              </StyledMenuTitle>
+              <StyledBorderedTitle>Login</StyledBorderedTitle>
+              <StyledMenuTitle>Not a member?</StyledMenuTitle>
+              <StyledMenuContent>
+                Sign up and join the community
+              </StyledMenuContent>
+            </StyledDropDownList>
+            <StyledEmptyDiv/>
+          </>
         )}
       </StyledMovie>
       {dropDownMenu && (
