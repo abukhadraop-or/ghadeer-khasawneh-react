@@ -16,6 +16,8 @@ import {
   StyledSelectionList,
   StyledImage,
   StyledOptions,
+  StyledSortAndArrow,
+  StyledArrowImage,
 } from 'components/MoviesFilter/sort-styles';
 import Arrow from 'Assets/Arrow.svg';
 
@@ -23,7 +25,7 @@ import Arrow from 'Assets/Arrow.svg';
  * Lists filter and sort sections.
  *
  *  @param {Opject} props
- *  @param {function} props.sorts sorts the data.
+ *  @param {function} props.sort sorts the data.
  * * @return {JSX.element}
  */
 
@@ -33,7 +35,7 @@ function MoviesFilter({ sortingHandler }) {
   const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
 
   /**
-   * Handle onClick event.
+   * Handles onClick event.
    * Shows selection drop down list.
    *
    * @param {React.SyntheticEvent} event Event data.
@@ -43,7 +45,7 @@ function MoviesFilter({ sortingHandler }) {
     setDropDownList(!dropDownList);
   };
   /**
-   * Handle onChange event.
+   * Handles onChange event.
    * Shows submit button.
    *
    * @param {React.SyntheticEvent} event Event data.
@@ -53,7 +55,7 @@ function MoviesFilter({ sortingHandler }) {
     setButtonIsDisabled(false);
   };
   /**
-   * Handle onChange event.
+   * Handles onChange event.
    * Shows disabled button.
    *
    * @param {React.SyntheticEvent} event Event data.
@@ -68,9 +70,10 @@ function MoviesFilter({ sortingHandler }) {
     <StyledPopularMovies>
       <StyledTitle>Popular Movies</StyledTitle>
       <StyledSort listIsShown={dropDownList}>
-        <div onClick={dropDownListHandler} aria-hidden="true">
+        <StyledSortAndArrow onClick={dropDownListHandler} aria-hidden="true">
           Sort
-        </div>
+          <StyledArrowImage src={Arrow} alt="Arrow Image" listIsShown={dropDownList}/>
+        </StyledSortAndArrow>
         {dropDownList && (
           <StyledForm>
             <StyledLabel>Sort Results By</StyledLabel>
