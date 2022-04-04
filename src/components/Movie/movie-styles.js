@@ -54,7 +54,7 @@ export const StyledPageSection = styled.div`
   position: fixed;
   right: 0rem;
   top: 0rem;
-  z-index: 10;
+  z-index: 125;
 `;
 
 export const StyledEllipseMenu = styled.img`
@@ -94,11 +94,9 @@ export const StyledDropDownList = styled.div`
   position: absolute;
   top: 2.1875rem;
   width: 17rem;
-  z-index: 1000;
+  z-index: 150;
 
-  /* ${StyledMovie}:hover & {
-    filter: blur(1.5rem);
-  } ; */
+  
 `;
 
 export const StyledDate = styled.div`
@@ -122,3 +120,13 @@ export const StyledMenuTitle = styled.h1`
   font-size: .9rem;
   padding: 0rem 1rem 0.5rem 1rem;
 `;
+export const StyledEmptyDiv = styled.div`
+position: absolute;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 100%;
+z-index: 100;
+backdrop-filter: blur(20px);
+`;
+;

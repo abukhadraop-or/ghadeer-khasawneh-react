@@ -8,7 +8,6 @@ import Layout from './components/Layout/Layout';
 
 function App() {
   const { movies, sortingHandler } = useFetch();
-
   return <Layout movies={movies} sortingHandler={sortingHandler} />;
 }
 
