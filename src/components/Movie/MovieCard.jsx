@@ -15,15 +15,17 @@ import {
   StyledMenuTitle,
   StyledBorderedTitle,
   StyledEmptyDiv,
+  StyledLoginArrow,
 } from 'components/Movie/movie-styles';
-import ellipse from 'Assets/ellipse.png';
+import EllipseImage from 'Assets/EllipseImage.svg';
+import Arrow from 'Assets/Arrow.svg';
 
 /**
  * Lists main section elements.
  *
  *  @param {Opject} props
  *  @param {String} props.title movie title
- *  @param {String} props.date movie release date 
+ *  @param {String} props.date movie release date
  *  @param {String} props.image movie image
  *  @param {String} props.overview overview about the movie
  * * @return {JSX.element}
@@ -48,7 +50,7 @@ function MovieCard({ title, date, image, overview }) {
           <StyledLowerText>{`${overview.substring(0, 80)}...`}</StyledLowerText>
         </StyledInformation>
         <StyledEllipseMenu
-          src={ellipse}
+          src={EllipseImage}
           alt="ellipse"
           onClick={dropDownListHandler}
         />
@@ -58,21 +60,20 @@ function MovieCard({ title, date, image, overview }) {
               <StyledMenuTitle>
                 Want to rate or add this item to a list?
               </StyledMenuTitle>
-              <StyledBorderedTitle>Login</StyledBorderedTitle>
+              <StyledBorderedTitle>
+                Login
+                <StyledLoginArrow src={Arrow} alt="Arrow" />
+              </StyledBorderedTitle>
               <StyledMenuTitle>Not a member?</StyledMenuTitle>
               <StyledMenuContent>
                 Sign up and join the community
               </StyledMenuContent>
             </StyledDropDownList>
-            <StyledEmptyDiv/>
+            <StyledEmptyDiv />
           </>
         )}
       </StyledMovie>
-      {dropDownMenu && (
-        <StyledPageSection onClick={dropDownListHandler}>
-          empty
-        </StyledPageSection>
-      )}
+      {dropDownMenu && <StyledPageSection onClick={dropDownListHandler} />}
     </>
   );
 }

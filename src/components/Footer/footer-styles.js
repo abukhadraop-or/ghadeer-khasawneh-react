@@ -47,7 +47,7 @@ export const StyledUserSection = styled.div`
   padding-right: 0.313rem;
   padding-top: 0.75rem;
   text-align: center;
-  width: 13.75rem;
+  width: 13rem;
 `;
 
 export const StyledImage = styled.img`
@@ -55,6 +55,7 @@ export const StyledImage = styled.img`
   @media (min-width: 37.5rem) {
     display: block;
     margin-top: -2.188rem;
+    padding-left: 100px;
     width: 7.5rem;
   }
 `;
@@ -63,11 +64,11 @@ export const StyledTitle = styled.div`
   font-weight: 700;
   padding-bottom: 0.625rem;
 `;
-export const StyledElement = styled.div`
-  font-size: 18px;
+export const StyledElement = styled.h1`
+  font-size: 1.125rem;
   font-weight: 500;
   font-family: 'Source Sans Pro', Arial, sans-serif;
-  padding: 3px;
+  padding: .1875rem;
 `;
 
 export default StyledFooter;
