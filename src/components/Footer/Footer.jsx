@@ -30,13 +30,13 @@ function Footer() {
           <StyledElement>System Status</StyledElement>
         </div>
         <div>
-          <StyledTitle>Get Involved</StyledTitle>
+          <StyledTitle>GET INVOLVED</StyledTitle>
           <StyledElement>Contribution Bible</StyledElement>
           <StyledElement>Add New Movie</StyledElement>
           <StyledElement>Add New TV Show</StyledElement>
         </div>
         <div>
-          <StyledTitle>Community</StyledTitle>
+          <StyledTitle>COMMUNITY</StyledTitle>
           <StyledElement>Guidlines</StyledElement>
           <StyledElement>Discussions</StyledElement>
           <StyledElement>Leaderboard</StyledElement>

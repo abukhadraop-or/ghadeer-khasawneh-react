@@ -14,7 +14,7 @@ export const StyledHeader = styled.nav`
     z-index: 1000;
   }
 `;
-export const Styledlist = styled.ul`
+export const Styledlist = styled.h1`
   align-items: center;
   background: #032541;
   display: flex;
@@ -29,7 +29,7 @@ export const StyledImage = styled.img`
   width: 9.625rem;
 `;
 
-export const StyledItem = styled.li`
+export const StyledItem = styled.h1`
   color: #f1f1f1;
   cursor: pointer;
   margin-right: 1.25rem;
