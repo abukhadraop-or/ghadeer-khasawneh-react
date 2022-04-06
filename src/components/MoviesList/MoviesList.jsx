@@ -12,21 +12,20 @@ import StyledMoviesCards from 'components/MoviesList/movies-list-styles';
  * * @return {JSX.element}
  */
 
-function MoviesList({movies}) {
+function MoviesList({ movies }) {
   return (
-   
-      <StyledMoviesCards>
-        {movies.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            title={movie.title}
-            date={movie.date}
-            image={movie.image}
-            overview={movie.overview}
-          />
-        ))}
-      </StyledMoviesCards>
- 
+    <StyledMoviesCards>
+      {movies.map((movie) => (
+        <MovieCard
+          key={movie.id}
+          title={movie.title}
+          date={movie.date}
+          image={movie.image}
+          overview={movie.overview}
+          average={movie.average}
+        />
+      ))}
+    </StyledMoviesCards>
   );
 }
 MoviesList.propTypes = {
