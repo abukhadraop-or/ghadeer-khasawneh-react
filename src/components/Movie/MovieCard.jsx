@@ -16,6 +16,10 @@ import {
   StyledBorderedTitle,
   StyledEmptyDiv,
   StyledLoginArrow,
+  StyledOuterCircle,
+  MiddleCircle,
+  InnerCircle,
+  StyledPercentageText,
 } from 'components/Movie/movie-styles';
 import EllipseImage from 'Assets/EllipseImage.svg';
 import Arrow from 'Assets/Arrow.svg';
@@ -31,17 +35,18 @@ import Arrow from 'Assets/Arrow.svg';
  * * @return {JSX.element}
  */
 
-function MovieCard({ title, date, image, overview }) {
+function MovieCard({ title, date, image, overview, average }) {
   const [dropDownMenu, setDropDownMenu] = useState(false);
   const dropDownListHandler = () => {
     setDropDownMenu(!dropDownMenu);
   };
+  const voteInDegrees = Math.trunc((average / 10) * 360);
+  const votePercentage = Math.trunc((voteInDegrees * 100) / 360);
 
   return (
     <>
       <StyledMovie dropDownIsShown={dropDownMenu}>
         <StyledImage src={`https://image.tmdb.org/t/p/w500/${image}`} alt="" />
-
         <StyledInformation>
           <StyledUpperText>
             <StyledTitle>{title}</StyledTitle>
@@ -72,6 +77,14 @@ function MovieCard({ title, date, image, overview }) {
             <StyledEmptyDiv />
           </>
         )}
+
+        <StyledOuterCircle>
+          <MiddleCircle degrees={voteInDegrees} percentage={votePercentage}>
+            <InnerCircle>
+              <StyledPercentageText>{votePercentage}</StyledPercentageText>
+            </InnerCircle>
+          </MiddleCircle>
+        </StyledOuterCircle>
       </StyledMovie>
       {dropDownMenu && <StyledPageSection onClick={dropDownListHandler} />}
     </>
@@ -79,6 +92,7 @@ function MovieCard({ title, date, image, overview }) {
 }
 
 MovieCard.propTypes = {
+  average: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
