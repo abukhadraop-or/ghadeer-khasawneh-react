@@ -5,28 +5,28 @@ const HiddenList = styled.ul`
   background-color: #032541;
   color: white;
   display: ${(props) => (props.isShown ? 'block' : 'none')};
-  gap: 20px;
-  height: 62.5rem;
+  gap: 1.25rem;
   margin-top: 3.75rem;
   opacity: 0.9;
-  padding: 1.875rem;
+  padding-bottom: 20rem;
+  padding-right: 13rem;
   position: fixed;
-  width: 21.875rem;
   z-index: 999;
 `;
-export const StyledItem = styled.li`
+
+export const Item = styled.li`
   font-size: 1.3rem;
-  padding: .9375rem;
+  padding: 0.9375rem;
 `;
 
-export const StyledOpenningText = styled.li`
+export const OpenningText = styled.li`
   font-size: 1.3rem;
-  padding: .9375rem;
+  padding: 0.9375rem;
 `;
 
-export const StyledMenu = styled.li`
-  font-size: .9375rem;
-  padding: .9375rem;
-
+export const Menu = styled.li`
+  font-size: 0.9375rem;
+  padding: 0.9375rem;
 `;
+
 export default HiddenList;

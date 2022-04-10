@@ -1,55 +1,53 @@
 import styled from 'styled-components';
 
-const StyledPhoneHeader = styled.nav`
+const PagePhoneHeader = styled.nav`
+  align-items: center;
   background: #032541;
-  display: none;
-  height: 4.0625rem;
+  display: block;
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
 
-  align-items: center;
-  display: block;
-  display: flex;
-  justify-content: space-between;
-
   & svg {
     color: white;
-    font-size: 1.25rem;
-    padding: 1.25rem;
+    font-size: 3rem;
+    padding-left: 1.5rem;
   }
+
   @media (min-width: 37.5rem) {
     display: none;
   }
 `;
 
-export const StyledLeftSection = styled.div`
+export const LeftSection = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  width: 13.75rem;
+  padding: 0.5rem 1.25rem 0.2rem 0rem;
 `;
 
-export const StyledRightSection = styled.div`
+export const RightSection = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 1.25rem;
-  right: 5;
-  width: 5.625rem;
+  padding: 0.3rem 1.25rem 0.2rem 0rem;
 `;
 
-export const StyledAvatarImage = styled.img`
+export const AvatarImage = styled.img`
   filter: invert(100%);
-  padding: .625rem;
+  padding: 0.625rem;
+  width: 3rem;
+`;
+
+export const HeaderSearchIcon = styled.img`
   width: 1.5625rem;
 `;
 
-export const StyledSearchIcon = styled.img`
-  width: 1.5625rem;
+export const HeaderLogo = styled.img`
+  width: 15.5rem;
+  padding-left: 11rem;
 `;
 
-export const StyledLogo = styled.img`
-  width: 3.5625rem;
-`;
-export default StyledPhoneHeader;
+export default PagePhoneHeader;

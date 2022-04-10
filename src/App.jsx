@@ -1,14 +1,13 @@
 import React from 'react';
-import useFetch from 'Services/Https';
 import Layout from './components/Layout/Layout';
 
 /**
- * * @return {JSX.element}
+ * Shows the layout section.
+ *
+ * @return {JSX.Element}
  */
-
 function App() {
-  const { movies, sortingHandler } = useFetch();
-  return <Layout movies={movies} sortingHandler={sortingHandler} />;
+  return <Layout />;
 }
 
 export default App;

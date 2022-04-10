@@ -1,20 +1,20 @@
 import React from 'react';
-import MovieCard from 'components/Movie/MovieCard';
+import MovieCard from 'components/MovieCard/MovieCard';
 import PropTypes from 'prop-types';
 
-import StyledMoviesCards from 'components/MoviesList/movies-list-styles';
+import MoviesCards from 'components/MoviesList/movies-list-styles';
 
 /**
  * Lists movies as cards.
  *
- *  @param {Opject} props
- *  @param {Array} props.movies contains movies data.
- * * @return {JSX.element}
+ *  @param {Object} props Props object.
+ *  @param {Array} props.movies Contains movies data.
+ *
+ *  @return {JSX.Element}
  */
-
 function MoviesList({ movies }) {
   return (
-    <StyledMoviesCards>
+    <MoviesCards>
       {movies.map((movie) => (
         <MovieCard
           key={movie.id}
@@ -25,10 +25,12 @@ function MoviesList({ movies }) {
           average={movie.average}
         />
       ))}
-    </StyledMoviesCards>
+    </MoviesCards>
   );
-}
+};
+
 MoviesList.propTypes = {
   movies: PropTypes.arrayOf.isRequired,
 };
+
 export default MoviesList;

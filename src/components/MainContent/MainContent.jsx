@@ -1,34 +1,30 @@
-import React from "react";
-import PropTypes from "prop-types";
-import MoviesList from "components/MoviesList/MoviesList";
-import MoviesFilter from "components/MoviesFilter/MoviesFilter";
-import  StyledMainContent from "components/MainContent/main-content-styles";
+import React from 'react';
+import PropTypes from 'prop-types';
+import MoviesList from 'components/MoviesList/MoviesList';
+import MoviesFilter from 'components/MoviesFilter/MoviesFilter';
+import PageMainContent from 'components/MainContent/main-content-styles';
 
 /**
  * Lists main section elements.
  *
- *  @param {Opject} props
- *  @param {Array} props.movies contains movies data.
- *  @param {function} props.sorts sorts the data.
- * * @return {JSX.element}
+ *  @param {Object} props Props object.
+ *  @param {Array} props.movies Contains movies data.
+ *  @param {function} props.onSort Sorts the data.
+ *
+ *  @return {JSX.Element}
  */
-
-function MainContent ({sortingHandler, movies}) {
+function MainContent({ movies, onSort }) {
   return (
-    <StyledMainContent>
-      <MoviesFilter sortingHandler={sortingHandler} />
-      <MoviesList movies={movies}/>
-    </StyledMainContent>
+    <PageMainContent>
+      <MoviesFilter onSort={onSort} />
+      <MoviesList movies={movies} />
+    </PageMainContent>
   );
-};
+}
 
 MainContent.propTypes = {
   movies: PropTypes.arrayOf.isRequired,
-  sortingHandler: PropTypes.func.isRequired,
+  onSort: PropTypes.func.isRequired,
 };
 
 export default MainContent;
-
-
-
-

@@ -1,55 +1,56 @@
 import React from 'react';
-import StyledFooter, {
-  StyledContainer,
-  StyledUserSection,
-  StyledImage,
-  StyledTitle,
-  StyledElement,
+import PageFooter, {
+  Container,
+  UserSection,
+  Image,
+  Title,
+  Element,
 } from 'components/Footer/footer-styles';
 import logo from 'Assets/Logo.svg';
 
 /**
  * Lists footer elements.
- * * @return {JSX.element}
+ *
+ * @return {JSX.Element}
  */
-
 function Footer() {
   return (
-    <StyledFooter>
-      <StyledContainer>
+    <PageFooter>
+      <Container>
         <div>
-          <StyledImage src={logo} alt="Logo" />
-          <StyledUserSection>JOIN THE COMMUNITY</StyledUserSection>
+          <Image src={logo} alt="Logo" />
+          <UserSection>JOIN THE COMMUNITY</UserSection>
         </div>
         <div>
-          <StyledTitle>THE BASICS</StyledTitle>
-          <StyledElement>About TMDB</StyledElement>
-          <StyledElement>Contact Us</StyledElement>
-          <StyledElement>Support Forums</StyledElement>
-          <StyledElement>API</StyledElement>
-          <StyledElement>System Status</StyledElement>
+          <Title>THE BASICS</Title>
+          <Element>About TMDB</Element>
+          <Element>Contact Us</Element>
+          <Element>Support Forums</Element>
+          <Element>API</Element>
+          <Element>System Status</Element>
         </div>
         <div>
-          <StyledTitle>GET INVOLVED</StyledTitle>
-          <StyledElement>Contribution Bible</StyledElement>
-          <StyledElement>Add New Movie</StyledElement>
-          <StyledElement>Add New TV Show</StyledElement>
+          <Title>GET INVOLVED</Title>
+          <Element>Contribution Bible</Element>
+          <Element>Add New Movie</Element>
+          <Element>Add New TV Show</Element>
         </div>
         <div>
-          <StyledTitle>COMMUNITY</StyledTitle>
-          <StyledElement>Guidlines</StyledElement>
-          <StyledElement>Discussions</StyledElement>
-          <StyledElement>Leaderboard</StyledElement>
-          <StyledElement>Twitter</StyledElement>
+          <Title>COMMUNITY</Title>
+          <Element>Guidlines</Element>
+          <Element>Discussions</Element>
+          <Element>Leaderboard</Element>
+          <Element>Twitter</Element>
         </div>
         <div>
-          <StyledTitle>LEGAL</StyledTitle>
-          <StyledElement>Terms of Use</StyledElement>
-          <StyledElement>API Terms of Use</StyledElement>
-          <StyledElement>Privacy Policy</StyledElement>
+          <Title>LEGAL</Title>
+          <Element>Terms of Use</Element>
+          <Element>API Terms of Use</Element>
+          <Element>Privacy Policy</Element>
         </div>
-      </StyledContainer>
-    </StyledFooter>
+      </Container>
+    </PageFooter>
   );
 }
+
 export default Footer;

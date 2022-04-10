@@ -1,96 +1,77 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import HiddenList, {
-  StyledItem,
-  StyledOpenningText,
-  StyledMenu,
+  Item,
+  OpenningText,
+  Menu,
 } from 'components/PhoneHiddenList/phone-hidden-list-styles';
 
 /**
- * Shows and hides drop down list..
+ * Shows and hides phone's header list.
  *
- *  @param {Opject} props Props.
- *  @param {function} props.sorts the data
- * * @return {JSX.element}
+ *  @param {Object} props Props object.
+ *  @param {function} props.onToggle Handles openning and closing the hamburger menu.
+ *
+ *  @return {JSX.Element}
  */
-
 function PhoneHiddenList({ onToggle }) {
   const [toggleItem, settoggleItem] = useState(false);
   const [toggleShows, settoggleShows] = useState(false);
   const [togglePeopleMenu, settogglePeopleMenu] = useState(false);
 
   /**
-   * Handles showing items menu
-   *
-   * @param {React.SyntheticEvent} event Event data.
+   * Handles showing items menu.
    */
-
-  const toggleMoviesMenuHandler = () => {
-    settoggleItem(!toggleItem);
-  };
+  const toggleMoviesMenuHandler = () => settoggleItem(!toggleItem);
 
   /**
-   * Handles showing shows menu
-   *
-   * @param {React.SyntheticEvent} event Event data.
+   * Handles showing shows menu.
    */
-
-  const toggleShowsHandler = () => {
-    settoggleShows(!toggleShows);
-  };
+  const toggleShowsHandler = () => settoggleShows(!toggleShows);
 
   /**
-   * Handles showing people's menu
-   *
-   * @param {React.SyntheticEvent} event Event data.
+   * Handles showing people's menu.
    */
+  const togglePeopleMenuHandler = () => settogglePeopleMenu(!togglePeopleMenu);
 
-  const togglePeopleMenuHandler = () => {
-    settogglePeopleMenu(!togglePeopleMenu);
-  };
   return (
     <HiddenList isShown={onToggle}>
-      <StyledOpenningText onClick={toggleMoviesMenuHandler}>
-        Movies
-      </StyledOpenningText>
+      <OpenningText onClick={toggleMoviesMenuHandler}>Movies</OpenningText>
       {toggleItem && (
-        <StyledMenu>
+        <Menu>
           <div>Popular</div>
           <div>Top Rated</div>
           <div>Upcoming</div>
           <div>Now Playing</div>
-        </StyledMenu>
+        </Menu>
       )}
-      <StyledOpenningText onClick={toggleShowsHandler}>
-        TV Shows
-      </StyledOpenningText>
+      <OpenningText onClick={toggleShowsHandler}>TV Shows</OpenningText>
       {toggleShows && (
-        <StyledMenu>
+        <Menu>
           <div>Popular</div>
           <div>Top Rated</div>
           <div>On TV</div>
           <div>Airing Today</div>
-        </StyledMenu>
+        </Menu>
       )}
-      <StyledOpenningText onClick={togglePeopleMenuHandler}>
-        People
-      </StyledOpenningText>
+      <OpenningText onClick={togglePeopleMenuHandler}>People</OpenningText>
       {togglePeopleMenu && (
-        <StyledMenu>
+        <Menu>
           <div>Popular People</div>
-        </StyledMenu>
+        </Menu>
       )}
-      <StyledItem>Contribution Bible</StyledItem>
-      <StyledItem>Apps</StyledItem>
-      <StyledItem>Discusions</StyledItem>
-      <StyledItem>Contribute</StyledItem>
-      <StyledItem>API</StyledItem>
-      <StyledItem>Support</StyledItem>
-      <StyledItem>About</StyledItem>
-      <StyledItem>Login</StyledItem>
+      <Item>Contribution Bible</Item>
+      <Item>Apps</Item>
+      <Item>Discusions</Item>
+      <Item>Contribute</Item>
+      <Item>API</Item>
+      <Item>Support</Item>
+      <Item>About</Item>
+      <Item>Login</Item>
     </HiddenList>
   );
 }
+
 PhoneHiddenList.propTypes = {
   onToggle: PropTypes.bool.isRequired,
 };

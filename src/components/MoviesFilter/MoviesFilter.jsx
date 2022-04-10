@@ -1,49 +1,43 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyledPopularMovies,
-  StyledMenu,
-  StyledTitle,
-  StyledEnabledButton,
-  StyledDisabledButton,
-} from 'components/MoviesFilter/movies-filter-styles';
-import {
-  StyledSort,
+  PopularMovies,
+  Title,
+  EnabledButton,
+  DisabledButton,
   FilterList,
   WhereToWatch,
-  StyledForm,
-  StyledLabel,
-  StyledSelectionList,
-  StyledImage,
-  StyledOptions,
-  StyledSortAndArrow,
-  StyledArrowImage,
+  Image,
+  Menu,
+} from 'components/MoviesFilter/movies-filter-styles';
+import {
+  Sort,
+  SortForm,
+  SortLabel,
+  SelectionList,
+  SortOptions,
+  SortAndArrow,
+  ArrowImage,
 } from 'components/MoviesFilter/sort-styles';
 import Arrow from 'Assets/Arrow.svg';
 
 /**
- * Lists filter and sort sections.
+ * Lists filter and sort section.
  *
- *  @param {Opject} props
- *  @param {function} props.sort sorts the data.
- * * @return {JSX.element}
+ *  @param {Object} props Props object.
+ *  @param {function} props.onSort Sorts movies based on a certain condition.
+ *  @return {JSX.Element}
  */
-
-function MoviesFilter({ sortingHandler }) {
+function MoviesFilter({ onSort }) {
   const [dropDownList, setDropDownList] = useState(true);
   const [selectedValue, setSelectedValue] = useState(true);
   const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
 
   /**
-   * Handles onClick event.
    * Shows selection drop down list.
-   *
-   * @param {React.SyntheticEvent} event Event data.
    */
+  const dropDownListHandler = () => setDropDownList(!dropDownList);
 
-  const dropDownListHandler = () => {
-    setDropDownList(!dropDownList);
-  };
   /**
    * Handles onChange event.
    * Shows submit button.
@@ -54,80 +48,77 @@ function MoviesFilter({ sortingHandler }) {
     setSelectedValue(event.target.value);
     setButtonIsDisabled(false);
   };
-  /**
-   * Handles onChange event.
-   * Shows disabled button.
-   *
-   * @param {React.SyntheticEvent} event Event data.
-   */
 
+  /**
+   * Shows disabled button.
+   */
   const callSortSubmitHandler = () => {
-    sortingHandler(selectedValue);
+    onSort(selectedValue);
     setButtonIsDisabled(true);
   };
 
   return (
-    <StyledPopularMovies>
-      <StyledTitle>Popular Movies</StyledTitle>
-      <StyledSort listIsShown={dropDownList}>
-        <StyledSortAndArrow onClick={dropDownListHandler} aria-hidden="true">
+    <PopularMovies>
+      <Title>Popular Movies</Title>
+      <Sort listIsShown={dropDownList}>
+        <SortAndArrow onClick={dropDownListHandler} aria-hidden="true">
           Sort
-          <StyledArrowImage src={Arrow} alt="Arrow Image" listIsShown={dropDownList}/>
-        </StyledSortAndArrow>
+          <ArrowImage
+            src={Arrow}
+            alt="Arrow Image"
+            listIsShown={dropDownList}
+          />
+        </SortAndArrow>
         {dropDownList && (
-          <StyledForm>
-            <StyledLabel>Sort Results By</StyledLabel>
-            <StyledSelectionList name="sort" onChange={sortSubmitHandler}>
-              <StyledOptions value="popularity.desc">
+          <SortForm>
+            <SortLabel>Sort Results By</SortLabel>
+            <SelectionList name="sort" onChange={sortSubmitHandler}>
+              <SortOptions value="popularity.desc">
                 Popularity Descending
-              </StyledOptions>
-              <StyledOptions value="popularity.asc">
+              </SortOptions>
+              <SortOptions value="popularity.asc">
                 Popularity Ascending
-              </StyledOptions>
-              <StyledOptions value="vote_average.desc">
+              </SortOptions>
+              <SortOptions value="vote_average.desc">
                 Rating Descending
-              </StyledOptions>
-              <StyledOptions value="vote_average.asc">
+              </SortOptions>
+              <SortOptions value="vote_average.asc">
                 Rating Ascending
-              </StyledOptions>
-              <StyledOptions value="release_date.desc">
+              </SortOptions>
+              <SortOptions value="release_date.desc">
                 Release Date Descending
-              </StyledOptions>
-              <StyledOptions value="release_date.asc">
+              </SortOptions>
+              <SortOptions value="release_date.asc">
                 Release Date Ascending
-              </StyledOptions>
-              <StyledOptions value="original_title.asc">
-                Title (A-Z)
-              </StyledOptions>
-              <StyledOptions value="original_title.desc">
-                Title (Z-A)
-              </StyledOptions>
-            </StyledSelectionList>
-          </StyledForm>
+              </SortOptions>
+              <SortOptions value="original_title.asc">Title (A-Z)</SortOptions>
+              <SortOptions value="original_title.desc">Title (Z-A)</SortOptions>
+            </SelectionList>
+          </SortForm>
         )}
-      </StyledSort>
-
+      </Sort>
       <FilterList>
-        <StyledMenu>Filter </StyledMenu>
-        <StyledImage src={Arrow} alt="Arrow Image" />
+        <Menu>Filter </Menu>
+        <Image src={Arrow} alt="Arrow Image" />
       </FilterList>
       <WhereToWatch>
-        <StyledMenu>Where To Watch</StyledMenu>
-        <StyledImage src={Arrow} alt="Arrow Image" />
+        <Menu>Where To Watch</Menu>
+        <Image src={Arrow} alt="Arrow Image" />
       </WhereToWatch>
       {!buttonIsDisabled && (
-        <StyledEnabledButton type="button" onClick={callSortSubmitHandler}>
+        <EnabledButton type="button" onClick={callSortSubmitHandler}>
           Search
-        </StyledEnabledButton>
+        </EnabledButton>
       )}
       {buttonIsDisabled && (
-        <StyledDisabledButton type="button">Search</StyledDisabledButton>
+        <DisabledButton type="button">Search</DisabledButton>
       )}
-    </StyledPopularMovies>
+    </PopularMovies>
   );
 }
 
 MoviesFilter.propTypes = {
-  sortingHandler: PropTypes.func.isRequired,
+  onSort: PropTypes.func.isRequired,
 };
+
 export default MoviesFilter;
