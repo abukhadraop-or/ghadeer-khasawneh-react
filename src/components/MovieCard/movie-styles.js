@@ -52,7 +52,7 @@ export const OverlaySection = styled.div`
   z-index: 125;
 `;
 
-export const EllipsImage = styled.img`
+export const CardEllipseImage = styled.img`
   display: none;
 
   @media (min-width: ${smallScreen}) {

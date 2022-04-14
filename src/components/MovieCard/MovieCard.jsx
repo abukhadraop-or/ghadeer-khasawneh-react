@@ -7,7 +7,7 @@ import {
   CardText,
   OverviewText,
   OverlaySection,
-  EllipsImage,
+  CardEllipseImage,
   DropDownList,
   Date,
   Title,
@@ -58,7 +58,7 @@ function MovieCard({ title, date, image, overview, average }) {
           </CardText>
           <OverviewText>{`${overview.substring(0, 80)}...`}</OverviewText>
         </CardContent>
-        <EllipsImage
+        <CardEllipseImage
           src={EllipseImage}
           alt="ellipse"
           title="ellipse"
