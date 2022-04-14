@@ -7,7 +7,7 @@ import {
   Image,
   LanguageSymbol,
   PlusSign,
-  SerachIcon,
+  HeaderSearchIcon,
   LoginText,
 } from 'components/Header/header-styles';
 import HeaderLogo from 'Assets/HeaderLogo.svg';
@@ -37,7 +37,7 @@ function Header() {
         </LanguageSymbol>
         <LoginText>Login</LoginText>
         <h1>Join TMDB</h1>
-        <SerachIcon src={SearchIcon} alt="Search Icon" />
+        <HeaderSearchIcon src={SearchIcon} alt="Search Icon" />
       </Icons>
     </PageHeader>
   );

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import {smallScreen, } from 'styles/break-points';
 
 const PageFooter = styled.div`
   padding-top: 1.25rem;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     background: #032541;
     color: #ffffff;
     font-size: 1.08rem;
@@ -21,7 +22,7 @@ export const Container = styled.div`
   gap: 1.25rem;
   padding: 2.5rem;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     align-items: flex-start;
     flex-direction: row;
     font-size: 1.25rem;
@@ -48,7 +49,7 @@ export const UserSection = styled.div`
 export const Image = styled.img`
   display: none;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: 36rem) {
     display: block;
     padding-bottom: 1.2rem;
     padding-left: 6.25rem;

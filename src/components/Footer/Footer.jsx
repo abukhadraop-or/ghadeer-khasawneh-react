@@ -37,7 +37,7 @@ function Footer() {
         </div>
         <div>
           <Title>COMMUNITY</Title>
-          <Element>Guidlines</Element>
+          <Element>Guidelines</Element>
           <Element>Discussions</Element>
           <Element>Leaderboard</Element>
           <Element>Twitter</Element>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import HiddenList, {
   Item,
-  OpenningText,
+  OpeningText,
   Menu,
 } from 'components/PhoneHiddenList/phone-hidden-list-styles';
 
@@ -10,33 +10,33 @@ import HiddenList, {
  * Shows and hides phone's header list.
  *
  *  @param {Object} props Props object.
- *  @param {function} props.onToggle Handles openning and closing the hamburger menu.
+ *  @param {function} props.onToggle Handles opening and closing the hamburger menu.
  *
  *  @return {JSX.Element}
  */
 function PhoneHiddenList({ onToggle }) {
-  const [toggleItem, settoggleItem] = useState(false);
-  const [toggleShows, settoggleShows] = useState(false);
-  const [togglePeopleMenu, settogglePeopleMenu] = useState(false);
+  const [toggleItem, setToggleItem] = useState(false);
+  const [toggleShows, setToggleShows] = useState(false);
+  const [togglePeopleMenu, setTogglePeopleMenu] = useState(false);
 
   /**
    * Handles showing items menu.
    */
-  const toggleMoviesMenuHandler = () => settoggleItem(!toggleItem);
+  const toggleMoviesMenuHandler = () => setToggleItem(!toggleItem);
 
   /**
    * Handles showing shows menu.
    */
-  const toggleShowsHandler = () => settoggleShows(!toggleShows);
+  const toggleShowsHandler = () => setToggleShows(!toggleShows);
 
   /**
    * Handles showing people's menu.
    */
-  const togglePeopleMenuHandler = () => settogglePeopleMenu(!togglePeopleMenu);
+  const togglePeopleMenuHandler = () => setTogglePeopleMenu(!togglePeopleMenu);
 
   return (
     <HiddenList isShown={onToggle}>
-      <OpenningText onClick={toggleMoviesMenuHandler}>Movies</OpenningText>
+      <OpeningText onClick={toggleMoviesMenuHandler}>Movies</OpeningText>
       {toggleItem && (
         <Menu>
           <div>Popular</div>
@@ -45,7 +45,7 @@ function PhoneHiddenList({ onToggle }) {
           <div>Now Playing</div>
         </Menu>
       )}
-      <OpenningText onClick={toggleShowsHandler}>TV Shows</OpenningText>
+      <OpeningText onClick={toggleShowsHandler}>TV Shows</OpeningText>
       {toggleShows && (
         <Menu>
           <div>Popular</div>
@@ -54,7 +54,7 @@ function PhoneHiddenList({ onToggle }) {
           <div>Airing Today</div>
         </Menu>
       )}
-      <OpenningText onClick={togglePeopleMenuHandler}>People</OpenningText>
+      <OpeningText onClick={togglePeopleMenuHandler}>People</OpeningText>
       {togglePeopleMenu && (
         <Menu>
           <div>Popular People</div>
@@ -62,7 +62,7 @@ function PhoneHiddenList({ onToggle }) {
       )}
       <Item>Contribution Bible</Item>
       <Item>Apps</Item>
-      <Item>Discusions</Item>
+      <Item>Discussions</Item>
       <Item>Contribute</Item>
       <Item>API</Item>
       <Item>Support</Item>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from 'components/Header/Header';
-import ShowMovies from 'services/https';
+import getMovies from 'services/get-movies';
 import MainContent from 'components/MainContent/MainContent';
 import Footer from 'components/Footer/Footer';
 import PhoneHeader from 'components/PhoneHeader/PhoneHeader';
@@ -17,13 +17,12 @@ function Layout() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   /**
-   * Handles showing movies while sorted and unsorted.
+   * Handles setting the data into the corresponding movies array.
    */
   useEffect(() => {
     (async () => {
-      const response = await ShowMovies(sort);
-      const data = await response.json();
-      const transformedMovies = data.results.map((moviesData) => ({
+      const response = await getMovies(sort);
+      const transformedMovies = response.results.map((moviesData) => ({
         average: moviesData.vote_average,
         count: moviesData.vote_count,
         date: moviesData.release_date,
@@ -38,7 +37,7 @@ function Layout() {
   /**
    * Sets the value of the selected option as a value for the sort state.
    *
-   * @param {String} value Value of selected option.
+   * @param {string} value Value of selected option.
    */
   const sortingHandler = (value) => setSort(value);
 

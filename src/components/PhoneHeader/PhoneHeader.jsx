@@ -16,7 +16,7 @@ import SearchIcon from 'Assets/SearchIcon.svg';
  * Lists phone header elements.
  *
  *  @param {Object} props Props object.
- *  @param {function} props.onToggleHandler Handles openning and closing the hamburger menu.
+ *  @param {function} props.onToggleHandler Handles opening and closing the hamburger menu.
  *
  *  @return {JSX.Element}
  */

@@ -19,7 +19,7 @@ export const Item = styled.li`
   padding: 0.9375rem;
 `;
 
-export const OpenningText = styled.li`
+export const OpeningText = styled.li`
   font-size: 1.3rem;
   padding: 0.9375rem;
 `;

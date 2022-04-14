@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import {
+  smallScreen,
+} from 'styles/break-points';
 
 export const Movie = styled.div`
   background-color: white;
@@ -10,7 +13,7 @@ export const Movie = styled.div`
   padding-top: 0rem;
   position: relative;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     flex-direction: column;
     justify-content: space-between;
   }
@@ -25,7 +28,7 @@ export const CardText = styled.div`
   font-size: 0.938rem;
   padding-top: 1.25rem;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     padding: 0.625rem 0.625rem 0.625rem 0.625rem;
   }
 `;
@@ -35,7 +38,7 @@ export const OverviewText = styled.p`
   margin-top: 1.25rem;
   overflow: hidden;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     display: none;
   }
 `;
@@ -52,7 +55,7 @@ export const OverlaySection = styled.div`
 export const EllipsImage = styled.img`
   display: none;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     border-radius: 100%;
     cursor: pointer;
     display: block;
@@ -133,7 +136,7 @@ export const BlurryCard = styled.div`
 export const OuterCircle = styled.div`
   display: none;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     background-color: black;
     border-radius: 6.25rem;
     bottom: 3.75rem;

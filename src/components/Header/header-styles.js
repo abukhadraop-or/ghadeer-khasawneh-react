@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { smallScreen } from 'styles/break-points';
 
 export const PageHeader = styled.nav`
   display: none;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     background: #032541;
     display: flex;
     justify-content: space-around;
@@ -58,7 +59,7 @@ export const PlusSign = styled.img`
   width: 3.2rem;
 `;
 
-export const SerachIcon = styled.img`
+export const HeaderSearchIcon = styled.img`
   padding-left: 2rem;
   width: 3.8rem;
 `;

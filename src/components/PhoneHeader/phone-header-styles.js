@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import {
+  smallScreen,
+} from 'styles/break-points';
 
 const PagePhoneHeader = styled.nav`
   align-items: center;
@@ -17,7 +20,7 @@ const PagePhoneHeader = styled.nav`
     padding-left: 1.5rem;
   }
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     display: none;
   }
 `;

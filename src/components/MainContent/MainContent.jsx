@@ -8,7 +8,7 @@ import PageMainContent from 'components/MainContent/main-content-styles';
  * Lists main section elements.
  *
  *  @param {Object} props Props object.
- *  @param {Array} props.movies Contains movies data.
+ *  @param {array} props.movies Contains movies data.
  *  @param {function} props.onSort Sorts the data.
  *
  *  @return {JSX.Element}

@@ -1,4 +1,10 @@
 import styled from 'styled-components';
+import {
+  smallScreen,
+  mediumScreen,
+  largeScreen,
+  extraLargeScreen,
+} from 'styles/break-points';
 
 export const PopularMovies = styled.div`
   background-color: white;
@@ -7,20 +13,20 @@ export const PopularMovies = styled.div`
   gap: 0.625rem;
   margin-top: 6.25rem;
 
-  @media (min-width: 37.5rem) {
+  @media (min-width: ${smallScreen}) {
     flex: 2;
     margin-top: -1.9rem;
   }
 
-  @media (min-width: 43.75rem) {
+  @media (min-width: ${mediumScreen}) {
     flex: 2;
   }
 
-  @media (min-width: 56.25rem) {
+  @media (min-width: ${largeScreen}) {
     flex: 1.7;
   }
 
-  @media (min-width: 81.25rem) {
+  @media (min-width: ${extraLargeScreen}) {
     flex: 0.8;
   }
 `;
@@ -36,7 +42,7 @@ export const EnabledButton = styled.button`
   color: white;
   font-size: 1.2rem;
   outline: none;
-  padding: 0.6rem 0rem 0.6rem 0rem;
+  padding: .6rem 0rem .6rem 0rem;
 
   &:hover {
     background: #032541;
@@ -51,31 +57,31 @@ export const DisabledButton = styled.button`
   font-size: 1.2rem;
   font-weight: bold;
   outline: none;
-  padding: 0.6rem 0rem 0.6rem 0rem;
+  padding: .6rem 0rem .6rem 0rem;
 `;
 
 export const FilterList = styled.div`
   background-color: white;
-  border-radius: 0.5rem;
-  border: 0.0625rem solid #e3e3e3;
-  box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 10%);
+  border-radius: .5rem;
+  border: .0625rem solid #e3e3e3;
+  box-shadow: 0 .125rem .5rem rgb(0 0 0 / 10%);
   display: flex;
   justify-content: space-between;
-  padding: 0.9375rem 0.2rem 0.9375rem 0.6rem;
+  padding: .9375rem .2rem .9375rem .6rem;
 `;
 
 export const WhereToWatch = styled.div`
   background-color: white;
-  border-radius: 0.5rem;
-  border: 0.0625rem solid #e3e3e3;
-  box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 10%);
+  border-radius: .5rem;
+  border: .0625rem solid #e3e3e3;
+  box-shadow: 0 .125rem .5rem rgb(0 0 0 / 10%);
   display: flex;
   justify-content: space-between;
-  padding: 0.9375rem 0.2rem 0.9375rem 0.6rem;
+  padding: .9375rem .2rem .9375rem .6rem;
 `;
 
 export const Image = styled.img`
-  width: 0.9375rem;
+  width: .9375rem;
 `;
 
 export const Menu = styled.div`

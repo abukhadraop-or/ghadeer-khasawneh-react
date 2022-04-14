@@ -1,14 +1,13 @@
 import React from 'react';
 import MovieCard from 'components/MovieCard/MovieCard';
 import PropTypes from 'prop-types';
-
 import MoviesCards from 'components/MoviesList/movies-list-styles';
 
 /**
  * Lists movies as cards.
  *
  *  @param {Object} props Props object.
- *  @param {Array} props.movies Contains movies data.
+ *  @param {array} props.movies Contains movies data.
  *
  *  @return {JSX.Element}
  */

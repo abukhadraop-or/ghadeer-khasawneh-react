@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'components/MovieCard/image-styles';
 import {
@@ -26,16 +26,16 @@ import EllipseImage from 'Assets/EllipseImage.svg';
  * Shows information about movies.
  *
  *  @param {Object} props Props object.
- *  @param {String} props.title Movie title.
- *  @param {String} props.date Movie release date.
- *  @param {String} props.image Movie image.
- *  @param {String} props.overview Overview about the movie.
- *  @param {String} props.average Voting average of the movie.
+ *  @param {string} props.title Movie title.
+ *  @param {string} props.date Movie release date.
+ *  @param {string} props.image Movie image.
+ *  @param {string} props.overview Overview about the movie.
+ *  @param {string} props.average Voting average of the movie.
  *
  *  @return {JSX.Element}
  */
 function MovieCard({ title, date, image, overview, average }) {
-  const [dropDownMenu, setDropDownMenu] = useState(false);
+  const [dropDownMenu, setDropDownMenu] = React.useState(false);
   const voteInDegrees = Math.trunc((average / 10) * 360);
   const votePercentage = Math.ceil(average * 10);
 
@@ -61,15 +61,14 @@ function MovieCard({ title, date, image, overview, average }) {
         <EllipsImage
           src={EllipseImage}
           alt="ellipse"
+          title="ellipse"
           onClick={dropDownListHandler}
         />
         {dropDownMenu && (
           <>
-            <DropDownList>
+            <DropDownList title="dropDownList">
               <MenuTitle>Want to rate or add this item to a list?</MenuTitle>
-              <BorderedTitle>
-                Login
-              </BorderedTitle>
+              <BorderedTitle>Login</BorderedTitle>
               <MenuTitle>Not a member?</MenuTitle>
               <MenuContent>Sign up and join the community</MenuContent>
             </DropDownList>
@@ -84,7 +83,9 @@ function MovieCard({ title, date, image, overview, average }) {
           </MiddleCircle>
         </OuterCircle>
       </Movie>
-      {dropDownMenu && <OverlaySection onClick={dropDownListHandler} />}
+      {dropDownMenu && (
+        <OverlaySection title="overlaySection" onClick={dropDownListHandler} />
+      )}
     </>
   );
 }

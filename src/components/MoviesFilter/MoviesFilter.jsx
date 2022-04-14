@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   PopularMovies,
@@ -29,9 +29,9 @@ import Arrow from 'Assets/Arrow.svg';
  *  @return {JSX.Element}
  */
 function MoviesFilter({ onSort }) {
-  const [dropDownList, setDropDownList] = useState(true);
-  const [selectedValue, setSelectedValue] = useState(true);
-  const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
+  const [dropDownList, setDropDownList] = React.useState(true);
+  const [selectedValue, setSelectedValue] = React.useState(true);
+  const [buttonIsDisabled, setButtonIsDisabled] = React.useState(true);
 
   /**
    * Shows selection drop down list.
@@ -61,7 +61,11 @@ function MoviesFilter({ onSort }) {
     <PopularMovies>
       <Title>Popular Movies</Title>
       <Sort listIsShown={dropDownList}>
-        <SortAndArrow onClick={dropDownListHandler} aria-hidden="true">
+        <SortAndArrow
+          title="sortAndArrow"
+          onClick={dropDownListHandler}
+          aria-hidden="true"
+        >
           Sort
           <ArrowImage
             src={Arrow}
@@ -70,9 +74,13 @@ function MoviesFilter({ onSort }) {
           />
         </SortAndArrow>
         {dropDownList && (
-          <SortForm>
+          <SortForm title="sortForm">
             <SortLabel>Sort Results By</SortLabel>
-            <SelectionList name="sort" onChange={sortSubmitHandler}>
+            <SelectionList
+              title="sort"
+              name="sort"
+              onChange={sortSubmitHandler}
+            >
               <SortOptions value="popularity.desc">
                 Popularity Descending
               </SortOptions>
@@ -106,12 +114,18 @@ function MoviesFilter({ onSort }) {
         <Image src={Arrow} alt="Arrow Image" />
       </WhereToWatch>
       {!buttonIsDisabled && (
-        <EnabledButton type="button" onClick={callSortSubmitHandler}>
+        <EnabledButton
+          title="enabledButton"
+          type="button"
+          onClick={callSortSubmitHandler}
+        >
           Search
         </EnabledButton>
       )}
       {buttonIsDisabled && (
-        <DisabledButton type="button">Search</DisabledButton>
+        <DisabledButton title="disabledButton" type="button">
+          Search
+        </DisabledButton>
       )}
     </PopularMovies>
   );
