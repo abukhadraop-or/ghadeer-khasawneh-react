@@ -1,0 +1,101 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Image from 'components/MovieCard/image-styles';
+import {
+  Movie,
+  CardContent,
+  CardText,
+  OverviewText,
+  OverlaySection,
+  CardEllipseImage,
+  DropDownList,
+  Date,
+  Title,
+  MenuContent,
+  MenuTitle,
+  BorderedTitle,
+  BlurryCard,
+  OuterCircle,
+  MiddleCircle,
+  InnerCircle,
+  PercentageText,
+} from 'components/MovieCard/movie-styles';
+import EllipseImage from 'Assets/EllipseImage.svg';
+
+/**
+ * Shows information about movies.
+ *
+ *  @param {Object} props Props object.
+ *  @param {string} props.title Movie title.
+ *  @param {string} props.date Movie release date.
+ *  @param {string} props.image Movie image.
+ *  @param {string} props.overview Overview about the movie.
+ *  @param {string} props.average Voting average of the movie.
+ *
+ *  @return {JSX.Element}
+ */
+function MovieCard({ title, date, image, overview, average }) {
+  const [dropDownMenu, setDropDownMenu] = React.useState(false);
+  const voteInDegrees = Math.trunc((average / 10) * 360);
+  const votePercentage = Math.ceil(average * 10);
+
+  /**
+   * Handles showing and hiding the Hamburger menu.
+   */
+  const dropDownListHandler = () => setDropDownMenu(!dropDownMenu);
+
+  return (
+    <>
+      <Movie dropDownIsShown={dropDownMenu}>
+        <Image
+          src={`https://image.tmdb.org/t/p/w500/${image}`}
+          alt="Movie Image"
+        />
+        <CardContent>
+          <CardText>
+            <Title>{title}</Title>
+            <Date>{date}</Date>
+          </CardText>
+          <OverviewText>{`${overview.substring(0, 80)}...`}</OverviewText>
+        </CardContent>
+        <CardEllipseImage
+          src={EllipseImage}
+          alt="ellipse"
+          title="ellipse"
+          onClick={dropDownListHandler}
+        />
+        {dropDownMenu && (
+          <>
+            <DropDownList title="dropDownList">
+              <MenuTitle>Want to rate or add this item to a list?</MenuTitle>
+              <BorderedTitle>Login</BorderedTitle>
+              <MenuTitle>Not a member?</MenuTitle>
+              <MenuContent>Sign up and join the community</MenuContent>
+            </DropDownList>
+            <BlurryCard />
+          </>
+        )}
+        <OuterCircle>
+          <MiddleCircle degrees={voteInDegrees} percentage={votePercentage}>
+            <InnerCircle>
+              <PercentageText>{votePercentage}</PercentageText>
+            </InnerCircle>
+          </MiddleCircle>
+        </OuterCircle>
+      </Movie>
+      {dropDownMenu && (
+        <OverlaySection title="overlaySection" onClick={dropDownListHandler} />
+      )}
+    </>
+  );
+}
+
+MovieCard.propTypes = {
+  average: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export default MovieCard;
